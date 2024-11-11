@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Final Exam Score Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Predict Final Exam Score</h2>
+        <form action="/predict" method="POST" id="predictionForm">
+            <div class="form-group">
+                <label for="study_hours">Study Hours per Week:</label>
+                <input type="number" step="0.1" name="study_hours" required>
+            </div>
+
+            <div class="form-group">
+                <label for="attendance_rate">Attendance Rate (%):</label>
+                <input type="number" step="0.1" name="attendance_rate" required>
+            </div>
+
+            <div class="form-group">
+                <label for="previous_exam_scores">Previous Exam Scores:</label>
+                <input type="number" step="0.1" name="previous_exam_scores" required>
+            </div>
+
+            <div class="form-group">
+                <label for="assignments_completed">Assignments Completed:</label>
+                <input type="number" step="1" name="assignments_completed" required>
+            </div>
+
+            <div class="form-group">
+                <label for="extracurricular_participation">Extracurricular Participation (0-5):</label>
+                <input type="number" step="1" name="extracurricular_participation" required>
+            </div>
+
+            <div class="button-group">
+                <button type="submit" class="btn predict-btn">Predict Score</button>
+                <button type="button" class="btn clear-btn" onclick="clearForm()">Clear</button>
+            </div>
+        </form>
+
+        {% if prediction %}
+            <div class="result" id="result">
+                <h3>Predicted Final Exam Score: {{ prediction }}</h3>
+            </div>
+        {% endif %}
+    </div>
+
+    <script>
+        function clearForm() {
+            document.getElementById('predictionForm').reset();
+            
+            const resultDiv = document.getElementById('result');
+            if (resultDiv) {
+                resultDiv.innerHTML = ''; // Clear the content inside the result div
+            }
+        }
+    </script>
+</body>
+</html>
