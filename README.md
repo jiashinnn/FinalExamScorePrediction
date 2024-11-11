@@ -38,4 +38,5 @@ The dataset contains the following features:
 |-------------------------------------------------------|---------------------------------------------|
 | ![Input Form](https://github.com/user-attachments/assets/18d5bc1e-4020-4845-b6dc-e5502fee790e) | ![Prediction Result](https://github.com/user-attachments/assets/cceb5336-069a-444c-a33d-c85f9912383f) |
 
-You can also go through my .ipynb file to see what I explored. Hope you feel well with my working! :)
+
+**You can also go through my .ipynb file to see what I explored. Hope you feel well with my working! :)**
